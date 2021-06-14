@@ -3,6 +3,12 @@ package com.bl.userreg;
 import java.util.Scanner;
 
 public class RegularExpr {
+	// (?=.*[0-9]) # a digit must occur at least once
+	// (?=.*[a-z]) # a lower case letter must occur at least once
+	// (?=.*[A-Z]) # an upper case letter must occur at least once
+	// (?=.*[@#$%^&+=]) # a special character must occur at least once
+	// (?=\S+$) # no whitespace allowed in the entire string
+	// .{8,} # anything, at least eight places though
 
 	public void firstName() {
 		Scanner sc = new Scanner(System.in);
@@ -55,20 +61,18 @@ public class RegularExpr {
 			System.out.println("The Ph. number " + phnum + " is invalid.");
 		}
 	}
-	
+
 	public void password() {
-		Scanner sc=new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter password is: ");
-		String pass=sc.nextLine();
+		String pass = sc.nextLine();
 		String regexFname = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\s+$).{8,}$";
-		 
-        if(pass.matches(regexFname)==true)
-        {
-         System.out.println("The password "+pass+" is valid.");
-        }else
-        {
-         System.out.println("The password "+pass+" is invalid.");
-        }
+
+		if (pass.matches(regexFname) == true) {
+			System.out.println("The password " + pass + " is valid.");
+		} else {
+			System.out.println("The password " + pass + " is invalid.");
+		}
 	}
 
 	public static void main(String[] args) {
