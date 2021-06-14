@@ -23,9 +23,9 @@ public class RegularExpr {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("The Last Name is: ");
 		String lname=sc.nextLine();
-		String regexFname = "^[A-Z]{1}[a-z]{2,}";
+		String regexLname = "^[A-Z]{1}[a-z]{2,}";
 		 
-        if(lname.matches(regexFname)==true)
+        if(lname.matches(regexLname)==true)
         {
          System.out.println("The last name "+lname+" is valid.");
         }else
