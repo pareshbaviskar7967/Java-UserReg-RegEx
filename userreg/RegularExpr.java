@@ -66,7 +66,7 @@ public class RegularExpr {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter password is: ");
 		String pass = sc.nextLine();
-		String regexFname ="^(?=.*[A-Z])(?=.*[a-z]).{8,}$";
+		String regexFname ="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";
 
 		if (pass.matches(regexFname) == true) {
 			System.out.println("The password " + pass + " is valid.");
