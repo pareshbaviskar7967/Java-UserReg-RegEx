@@ -21,7 +21,7 @@ public class RegularExpr {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Last Name is: ");
 		String lname = sc.nextLine();
-		String regexFname = "^[A-Z]{1}[a-z]{2,}";
+		String regexFname = "^[A-Z]{1}[A-Za-z]{2,}$";
 
 		if (lname.matches(regexFname) == true) {
 			System.out.println("The last name " + lname + " is valid.");
@@ -55,6 +55,21 @@ public class RegularExpr {
 			System.out.println("The Ph. number " + phnum + " is invalid.");
 		}
 	}
+	
+	public void password() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter password is: ");
+		String pass=sc.nextLine();
+		String regexFname = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\s+$).{8,}$";
+		 
+        if(pass.matches(regexFname)==true)
+        {
+         System.out.println("The password "+pass+" is valid.");
+        }else
+        {
+         System.out.println("The password "+pass+" is invalid.");
+        }
+	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the user registration.");
@@ -63,5 +78,6 @@ public class RegularExpr {
 		obj.lastName();
 		obj.eMail();
 		obj.phoneNo();
+		obj.password();
 	}
 }
