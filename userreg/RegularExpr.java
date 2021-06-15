@@ -41,7 +41,6 @@ public class RegularExpr {
 		System.out.println("Enter eMail is: ");
 		String email = sc.nextLine();
 		String regexFname = "^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*@[A-Za-z0-9]+.[A-Za-z]{2,4}([.][A-Za-z]{2})*$";
-		// String regexFname = "^[A-Za-z]+.[A-Za-z]{0,3}@[a-z]+.[a-z]{2}$";
 
 		if (email.matches(regexFname) == true) {
 			System.out.println("The eMail " + email + " is valid.");
