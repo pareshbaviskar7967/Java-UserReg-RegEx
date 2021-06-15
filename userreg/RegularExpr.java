@@ -41,6 +41,7 @@ public class RegularExpr {
 		System.out.println("Enter eMail is: ");
 		String email = sc.nextLine();
 		String regexFname = "^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*@[A-Za-z0-9]+.[A-Za-z]{2,4}([.][A-Za-z]{2})*$";
+		// String regexFname = "^[A-Za-z]+.[A-Za-z]{0,3}@[a-z]+.[a-z]{2}$";
 
 		if (email.matches(regexFname) == true) {
 			System.out.println("The eMail " + email + " is valid.");
@@ -62,11 +63,24 @@ public class RegularExpr {
 		}
 	}
 
+	public void pincode() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Pincode is: ");
+		String pin = sc.nextLine();
+		String regexFname = "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$";
+
+		if (pin.matches(regexFname) == true) {
+			System.out.println("The Pincode " + pin + " is valid.");
+		} else {
+			System.out.println("The Pincode " + pin + " is invalid.");
+		}
+	}
+
 	public void password() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter password is: ");
 		String pass = sc.nextLine();
-		String regexFname ="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).{8,}$";
+		String regexFname = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).{8,}$";
 
 		if (pass.matches(regexFname) == true) {
 			System.out.println("The password " + pass + " is valid.");
@@ -82,6 +96,7 @@ public class RegularExpr {
 		obj.lastName();
 		obj.eMail();
 		obj.phoneNo();
+		obj.pincode();
 		obj.password();
 	}
 }
